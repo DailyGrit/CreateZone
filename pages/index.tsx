@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,6 +18,114 @@
         <a href="#community" class="hover:text-indigo-600">커뮤니티</a>
         <a href="#profile" class="hover:text-indigo-600">내 정보</a>
       </nav>
+=======
+import React from 'react';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-zinc-100 via-white to-zinc-200 text-zinc-800 font-sans">
+      {/* 헤더 */}
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur shadow-md">
+        <div className="max-w-[1600px] mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-3xl font-bold text-indigo-700 tracking-tight">Createzone</h1>
+          <nav className="space-x-6 text-base font-medium">
+            <a href="#" className="text-zinc-700 hover:text-indigo-600 transition">탐색하기</a>
+            <a href="#" className="text-zinc-700 hover:text-indigo-600 transition">게시하기</a>
+            <a href="#" className="text-zinc-700 hover:text-indigo-600 transition">커뮤니티</a>
+            <a href="#" className="text-zinc-700 hover:text-indigo-600 transition">내 정보</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* 상단 배너 + 검색 + 카테고리 */}
+      <section className="bg-white py-10 border-b border-zinc-200 shadow-sm">
+        <div className="max-w-[1600px] mx-auto px-4 space-y-6">
+          {/* 검색창 */}
+          <div className="text-center">
+            <input
+              type="text"
+              placeholder="어떤 콘텐츠를 찾고 계신가요?"
+              className="w-full max-w-xl px-5 py-3 rounded-lg border border-zinc-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            />
+          </div>
+
+          {/* 카테고리 버튼 */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {['게임', '웹툰', '디자인', '음악', '유튜브', '방송'].map((cat) => (
+              <button
+                key={cat}
+                className="px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 transition shadow-md"
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* 광고 배너 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="h-[100px] rounded-xl bg-white/60 backdrop-blur shadow-md flex items-center justify-center text-zinc-600 border border-zinc-100"
+              >
+                창작자 배너 광고 {i}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 메인 콘텐츠 */}
+      <main className="w-full max-w-[1600px] mx-auto px-4 py-16 flex gap-8">
+        {/* 좌측 광고 */}
+        <aside className="hidden lg:flex w-[220px] h-[600px] items-center justify-center bg-white/80 backdrop-blur rounded-xl shadow-inner text-center border border-zinc-200">
+          <span className="text-zinc-500">광고 영역</span>
+        </aside>
+
+        {/* 메인 콘텐츠 */}
+        <section className="flex-grow space-y-16">
+          <div>
+            <h2 className="text-3xl font-semibold text-indigo-700 mb-6">오늘의 인디 추천</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[1, 2, 3].map(i => (
+                <div
+                  key={i}
+                  className="bg-white rounded-xl p-5 shadow-lg hover:shadow-xl transition transform hover:scale-[1.02] border border-zinc-100"
+                >
+                  <span className="inline-block bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full mb-3">CATEGORY</span>
+                  <h3 className="text-xl font-semibold mb-1">콘텐츠 제목</h3>
+                  <p className="text-sm text-zinc-600">간단한 설명이 들어갑니다</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-semibold text-indigo-700 mb-6">참여형 콘텐츠</h2>
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-xl shadow-md border border-zinc-100">
+                <h3 className="text-lg font-semibold">이상형 월드컵: 내가 가장 원하는 게임 장르는?</h3>
+                <button className="mt-3 px-5 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition shadow">참여하기</button>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md border border-zinc-100">
+                <h3 className="text-lg font-semibold">밸런스 게임: 플레이 타임 2시간 vs 그래픽 최고급</h3>
+                <button className="mt-3 px-5 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition shadow">참여하기</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 우측 광고 */}
+        <aside className="hidden lg:flex w-[220px] h-[600px] items-center justify-center bg-white/80 backdrop-blur rounded-xl shadow-inner text-center border border-zinc-200">
+          <span className="text-zinc-500">광고 영역</span>
+        </aside>
+      </main>
+
+      {/* 푸터 */}
+      <footer className="bg-zinc-50 border-t border-zinc-200 shadow-inner py-6 text-center text-sm text-zinc-500">
+        &copy; 2025 Createzone. All rights reserved.
+      </footer>
+>>>>>>> 42ad7da (웹 개선)
     </div>
   </header>
 
